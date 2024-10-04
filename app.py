@@ -36,7 +36,7 @@ dictionary = corpora.Dictionary.load('model/dictionary.dict')
 # Định nghĩa endpoint phân loại văn bản
 
 
-@app.route('/classify', methods=['POST'])
+@app.route('/', methods=['POST'])
 def classify_text():
     data = request.json
     new_text = data.get('text', '')
