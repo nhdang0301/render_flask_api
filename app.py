@@ -67,7 +67,7 @@ def classify_text():
     response = {
         'topics': topic_details,
         # Chuyển đổi thành float
-        'conclusion': f'Văn bản thuộc về chủ đề {max_topic} với xác suất cao nhất là {float(max_prob)}.'
+        'conclusion': f'This abstract belong to {max_topic} with probability is {float(max_prob)}.'
     }
     return jsonify(response)
 
