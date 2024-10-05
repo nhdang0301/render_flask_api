@@ -58,7 +58,7 @@ def classify_text():
     for topic_id, prob in topics:
         # Chuyển đổi thành float
         topic_details.append(
-            {'topic': topic_id + 1, 'probability': float(prob)})
+            {'topic': topic_id + 1, 'probability': round(float(prob)*100, 2)})
         if prob > max_prob:
             max_prob = prob
             max_topic = topic_id + 1
@@ -67,7 +67,7 @@ def classify_text():
     response = {
         'topics': topic_details,
         # Chuyển đổi thành float
-        'conclusion': f'This abstract belong to {max_topic} with probability is {float(max_prob)}.'
+        'conclusion': f'This abstract belong to {max_topic} with probability is {round(float(max_prob)*100, 2)}%.'
     }
     return jsonify(response)
 
